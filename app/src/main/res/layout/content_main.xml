@@ -4,16 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.khushpreet.donote.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hi>you fuck" />
+        android:id="@+id/lvItems"
+        android:smoothScrollbar="false"
+        android:scrollingCache="false"
+        android:stackFromBottom="false"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/btnAddItem"
+        android:layout_alignEnd="@+id/btnAddItem"
+        android:layout_above="@+id/etNewItem"
+        android:choiceMode="multipleChoice"
+        android:layout_alignParentTop="true"
+        />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etNewItem"
+        android:hint="Enter a task!"
+        android:background="#ffffff"
+        android:textColorHint="#9E9E9E"
+        android:paddingStart="10dp"
+
+        android:layout_alignStart="@+id/lvItems"
+        android:layout_alignBottom="@+id/btnAddItem"
+        android:layout_alignTop="@+id/btnAddItem"
+        android:layout_toStartOf="@+id/btnAddItem" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Item"
+        android:id="@+id/btnAddItem"
+        android:onClick="onAddItem"
+        android:background="#4e5991"
+        android:singleLine="false"
+        android:textColorHighlight="#1c1c1c"
+        android:layout_marginBottom="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#ffffff"
+        android:typeface="monospace" />
+
 </RelativeLayout>
